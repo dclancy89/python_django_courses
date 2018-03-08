@@ -1,0 +1,113 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica;
+}
+
+#pagewrap {
+	max-width: 75rem;
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	padding-top: 4rem;
+}
+
+ul.messages {
+	list-style: none;
+}
+
+li.error {
+	color: red;
+}
+
+form {
+	max-width: 425px;
+	width: 100%;
+}
+
+form label {
+	display: inline-block;
+	width: 100px;
+	padding: 0 0 1rem 0;
+	vertical-align: top;
+}
+
+form input[type="text"], form textarea {
+	display: inline-block;
+	width: 300px;
+	font-size: 14px;
+	padding: 0.2rem;
+	margin: 0;
+	border: 1px solid black;
+}
+
+form textarea {
+	height: 100px;
+	resize: vertical;
+}
+
+.button {
+	background-color: #329139;
+	color: #ffffff;
+	border: none;
+	border-radius: 0;
+	padding: 6px 18px;
+	display: inline-table;
+	margin: 0.5rem 0 0.5rem auto;
+	font-size: 16px;
+	text-decoration: none;
+	box-shadow: 2px 2px 2px black;
+	transition: opacity 0.2s ease 0s;
+}
+
+.button:hover {
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+.button.red {
+	background-color: #c60000;
+}
+
+input.button {
+	display: table;
+}
+
+table {
+	margin: 1rem 0;
+	border: 1px solid black;
+	border-spacing: 0;
+}
+
+table th {
+	background-color: #AAA;
+	padding: 0.5rem;
+	text-align: left;
+	border-right: 1px solid black;
+}
+
+table th:last-child {
+	border: none;
+}
+
+table td {
+	border-right: 1px solid black;
+	padding: 0.5rem;
+	vertical-align: top;
+}
+
+table td:nth-child(2) {
+	width: 350px;
+}
+
+table td:last-child {
+	border: none;
+}
+
+table tr:nth-child(even) {
+	background-color: #EEE;
+}
+
+hr {
+	margin: 2rem 0;
+}

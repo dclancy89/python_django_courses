@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Courses</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'courses_app/css/style.css' %}">
+</head>
+<body>
+
+	<div id="pagewrap">
+		{% if messages %}
+			<ul class="messages">
+    		{% for message in messages %}
+    			<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    		{% endfor %}
+			</ul>
+		{% endif %}
+
+		<h1>{{ course.name }}</h1>
+		<p>Description: {{ course.description.description }}</p>
+
+		<form action="/courses/{{ course.id }}/comment" method="POST">
+			{% csrf_token %}
+			<h2>Add comment</h2>
+			<label>Name:</label>
+			<input type="text" name="name">
+
+			<label>Comment:</label>
+			<textarea name="comment"></textarea>
+
+			<input type="submit" value="Comment" class="button">
+		</form>
+
+		{% if comments == None %}
+			<p>There are no comments for this course.</p>
+		{% else %}
+
+			{% for comment in comments %}
+				<div class="comment">
+					<h3>{{ comment.name }}</h3>
+					<p>{{ comment.comment }}</p>
+				</div>
+			{% endfor %}
+		{% endif %}
+
+		<hr />
+		<a href="/" class="button">Go Back</a>
+
+
+	</div>
+
+</body>
+</html>
